@@ -38,6 +38,8 @@ public class ArticleDetailActivity extends AppCompatActivity
 //    private View mUpButton;
 //
 //    private Toolbar mToolbar;
+//    private CollapsingToolbarLayout mCollapsingToolbarLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,10 @@ public class ArticleDetailActivity extends AppCompatActivity
 
         getLoaderManager().initLoader(0, null, this);
 
-//        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+//        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.detailActivityCollapsingToolbar);
+//        mToolbar = (Toolbar) findViewById(R.id.detailActivityToolbar);
+
+//        setSupportActionBar(mToolbar);
 
         mPagerAdapter = new MyPagerAdapter(getFragmentManager());
         mPager = (ViewPager) findViewById(R.id.pager);
@@ -76,6 +81,7 @@ public class ArticleDetailActivity extends AppCompatActivity
                     mCursor.moveToPosition(position);
                 }
                 mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
+//                mCollapsingToolbarLayout.setTitle(mCursor.getString(ArticleLoader.Query.TITLE));
 //                updateUpButtonPosition();
             }
         });
