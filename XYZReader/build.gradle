@@ -12,6 +12,17 @@ android {
         minSdkVersion 16
         targetSdkVersion 23
     }
+
+    buildTypes{
+        shrunk {
+            minifyEnabled true
+            shrinkResources true
+        }
+        big {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
 }
 
 dependencies {
